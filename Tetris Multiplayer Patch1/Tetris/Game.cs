@@ -63,6 +63,8 @@ namespace Tetris
             //gata server
         }
 
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
 
