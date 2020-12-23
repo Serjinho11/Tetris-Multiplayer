@@ -230,12 +230,8 @@ namespace Tetris
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Hide();
             lnc.Show();
-
-            //workThread = false;
-         //   streamServer.Close();
-
         }
 
 
@@ -275,29 +271,7 @@ namespace Tetris
 
                         if (dateServer == " 3 ")
                         {
-                            piesa = new Patru();
-                            piesa.PozInit(this);
-                        }
-                        if (dateServer == " 4 ")
-                        {
-                            piesa = new PatruIntors();
-                            piesa.PozInit(this);
-                        }
-
-                        if (dateServer == " 5 ")
-                        {
                             piesa = new T();
-                            piesa.PozInit(this);
-                        }
-
-                        if (dateServer == " 6 ")
-                        {
-                            piesa = new J();
-                            piesa.PozInit(this);
-                        }
-                        if (dateServer == " 7 ")
-                        {
-                            piesa = new L();
                             piesa.PozInit(this);
                         }
                         //char temp;
@@ -310,8 +284,8 @@ namespace Tetris
                         if (dateServer == null) break;//primesc nimic - clientul a plecat
                         if (dateServer == "#Gata") //ca sa pot sa inchid serverul
                             workThread = false;
-                        //MethodInvoker m = new MethodInvoker(() => serverForm.textBox1.Text += (socketServer.LocalEndPoint + ": " + dateServer + Environment.NewLine));
-                        //serverForm.textBox1.Invoke(m);
+                        MethodInvoker m = new MethodInvoker(() => serverForm.textBox1.Text += (socketServer.LocalEndPoint + ": " + dateServer + Environment.NewLine));
+                        serverForm.textBox1.Invoke(m);
                     }
                     streamServer.Close();
                 }
@@ -327,14 +301,14 @@ namespace Tetris
         }
 
 
-/*
+
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             workThread = false;
             streamServer.Close();
 
         }
-        
+
         private void btnSend_Click(object sender, EventArgs e)
         {
             try
@@ -342,9 +316,9 @@ namespace Tetris
 
                 StreamWriter scriere = new StreamWriter(streamServer);
                 scriere.AutoFlush = true; // enable automatic flushing
-               // scriere.WriteLine(tbServerDate.Text);
-               // textBox1.Text += "Server: " + tbServerDate.Text + Environment.NewLine;
-               // tbServerDate.Clear();
+                scriere.WriteLine(tbServerDate.Text);
+                textBox1.Text += "Server: " + tbServerDate.Text + Environment.NewLine;
+                tbServerDate.Clear();
                 // s_text.Close();
             }
             finally
@@ -365,7 +339,7 @@ namespace Tetris
                 btnSend_Click(sender, e);
             }
         }
-        */
+
         //gata server
 
     }

@@ -303,6 +303,9 @@
             this.label202 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbServerDate = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -3064,12 +3067,11 @@
             // 
             this.btnBack.AutoSize = true;
             this.btnBack.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnBack.Location = new System.Drawing.Point(616, 9);
+            this.btnBack.Location = new System.Drawing.Point(712, 9);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(39, 17);
             this.btnBack.TabIndex = 203;
             this.btnBack.Text = "Back";
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblLevel
@@ -3083,6 +3085,35 @@
             this.lblLevel.Text = "Beginner";
             this.lblLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(604, 65);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(359, 109);
+            this.textBox1.TabIndex = 205;
+            // 
+            // tbServerDate
+            // 
+            this.tbServerDate.Enabled = false;
+            this.tbServerDate.Location = new System.Drawing.Point(604, 216);
+            this.tbServerDate.Name = "tbServerDate";
+            this.tbServerDate.Size = new System.Drawing.Size(349, 22);
+            this.tbServerDate.TabIndex = 206;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Enabled = false;
+            this.btnSend.Location = new System.Drawing.Point(604, 244);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 207;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3090,7 +3121,10 @@
             this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImage = global::Tetris.Properties.Resources.red_abstract;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(667, 673);
+            this.ClientSize = new System.Drawing.Size(1074, 673);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.tbServerDate);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label202);
@@ -3100,8 +3134,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "Game";
             this.Text = "Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
@@ -3389,5 +3421,8 @@
         public System.Windows.Forms.Label lblScor;
         private System.Windows.Forms.Label btnBack;
         public System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbServerDate;
+        private System.Windows.Forms.Button btnSend;
     }
 }
